@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sentiment Analyzer</title>
+        <link href="https://fonts.googleapis.com/css2?&family=Roboto:wght@300;500;700&family=Roboto+Slab:wght@300;400;700;800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1aac26dbd0.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="page-container">
+        <header>
+            <h1>Evaluate News for Subjectivity and Positivity</h1>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input class="user-input" id="url" type="text" name="input" value="" placeholder="Enter URL here to discover sentiment">
+                    <input class="button" type="submit" name="" value="Analyze" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+
+            <section class="midsection" id="results">
+                <strong>Form Results:</strong>
+                <br></br>
+                <div id="polarity"></div>
+                <div id="subjectivity"></div>
+                <div id="confidence"></div>
+                
+            </section>
+            <section class="attribution"><br>
+                <br></br>
+                <p><em>Polarity key:</em></p>
+                <p><li>P+ = Strong Positive</li></p>
+                <p><li>P = Positive</li></p>
+                <p><li>NEU = Neutral</li></p>
+                <p><li>N = Negative</li></p>
+                <p><li>N+ Strong Negative</li></p>
+                <br>
+                
+            </section>
+        </main>
+
+        <footer>
+            <h2>
+                <a href="https://www.meaningcloud.com/" target="blank">Powered by MeaningCloud</a>
+                <strong>Natural Language Processing Project - JPMC - Udacity Front End Nanodegree</strong>
+            </h2>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+    </div>
+</html>

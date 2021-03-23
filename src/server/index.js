@@ -4,7 +4,7 @@ dotenv.config();
 var path = require('path')
 const express = require('express')
 const fetch = require('node-fetch');
-const mockAPIResponse = require('./mockAPI.js')
+//const mockAPIResponse = require('./mockAPI.js')
 
 // Start up an instance of app
 const app = express()
@@ -30,16 +30,18 @@ app.get('/test', function (req, res) {
 })
 */
 // POST Route
-app.post('/apiPost', async function(req, res) {
-    //userInput = req.body.url;
-    const apiURL = "https://api.meaningcloud.com/sentiment-2.1?key=" +(process.env.API_KEY)+ "&url=" +(req.body.url)+ "&lang=en"
+app.post('/apiPost', apiCall)
 
-    const getScore = await fetch(apiURL)
+async function apiCall(req, res) {
+    //userInput = req.body.url;
+    const URL = "https://api.meaningcloud.com/sentiment-2.1?key=" +(process.env.API_KEY)+ "&url=" +(req.body.url)+ "&lang=en"
+    const getScore = await fetch(URL)
+    
     const score = await getScore.json()
 
     console.log("Successfully completed")
     res.send(score)
-})
+}
 
 // designates what port the app will listen to for incoming requests
 app.listen(2020, function () {

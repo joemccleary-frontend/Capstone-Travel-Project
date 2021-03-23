@@ -8,6 +8,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
+    mode: 'production',
     optimization: {
         minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
@@ -15,7 +16,6 @@ module.exports = {
         libraryTarget: 'var',
         library: 'Client'
     },
-    mode: 'production',
     module: {
         rules: [
             {
@@ -27,14 +27,6 @@ module.exports = {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
-            // Reference (https://webpack.js.org/loaders/file-loader/)
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader',
-                options: {
-                  name: '[path][name].[ext]',
-                }
-            }
         ]
     },
     plugins: [
@@ -42,7 +34,9 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new MiniCssExtractPlugin({ filename: "[name].css" }),
+        new MiniCssExtractPlugin({ 
+            filename: "[name].css" }),
+        
         new WorkboxPlugin.GenerateSW()
     ]
 }

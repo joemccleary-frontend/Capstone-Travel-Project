@@ -8,7 +8,7 @@
     <body>
         <div id="page-container">
         <header>
-            <h1>Evaluate News for Subjectivity and Positivity</h1>
+            <h1>Evaluate News for Subjectivity and Polarity</h1>
         </header>
 
         <main>
@@ -20,7 +20,7 @@
             </section>
 
             <section class="midsection" id="results">
-                <strong>Article Results:</strong>
+                <em>Article Results:</em>
                 <br></br>
                 <div id="polarity"></div>
                 <div id="subjectivity"></div>
@@ -49,7 +49,7 @@
         </footer>
 
         <script>
-            //reference: lesson 4.7
+            //ref: lesson 4.7
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');

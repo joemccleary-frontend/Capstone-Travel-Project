@@ -24,11 +24,11 @@ console.log(__dirname)
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
-
+/*
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
-
+*/
 // POST Route
 app.post('/apiPost', async function(req, res) {
     //userInput = req.body.url;

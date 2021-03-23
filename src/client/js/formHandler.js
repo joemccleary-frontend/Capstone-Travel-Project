@@ -1,4 +1,4 @@
-import { checkForURL } from "./urlChecker"
+import { checkURL } from "./urlChecker"
 
 function handleSubmit(event) {
     event.preventDefault()
@@ -6,7 +6,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formInput = document.getElementById('url').value
 
-    if(checkForURL(formInput)) {
+    if(checkURL(formInput)) {
         let post = async (results = {}) => {
             let apiData = await fetch('/apiPost', {
                 method: 'POST',

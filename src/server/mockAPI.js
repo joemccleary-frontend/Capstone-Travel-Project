@@ -1,3 +1,4 @@
+/*
 let json = {
     'title': 'test json response',
     'message': 'this is a message',
@@ -5,3 +6,4 @@ let json = {
 }
 
 module.exports = json
+*/

@@ -1,5 +1,3 @@
-
-
 export function checkURL(formURL){
     //https://stackoverflow.com/questions/30970068/js-regex-url-validation
     //Used for regex match url code
@@ -12,5 +10,3 @@ export function checkURL(formURL){
         return true;
     }
  }
-
-// export { checkURL }

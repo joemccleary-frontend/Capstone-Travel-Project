@@ -2,9 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Sentiment Analyzer</title>
-        <link href="https://fonts.googleapis.com/css2?&family=Roboto:wght@300;500;700&family=Roboto+Slab:wght@300;400;700;800&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/1aac26dbd0.js" crossorigin="anonymous"></script>
+        <title>News Sentiment Analysis</title>
     </head>
 
     <body>
@@ -22,7 +20,7 @@
             </section>
 
             <section class="midsection" id="results">
-                <strong>Form Results:</strong>
+                <strong>Article Results:</strong>
                 <br></br>
                 <div id="polarity"></div>
                 <div id="subjectivity"></div>
@@ -45,14 +43,14 @@
         <footer>
             <h2>
                 <a href="https://www.meaningcloud.com/" target="blank">Powered by MeaningCloud</a>
-                <strong>Natural Language Processing Project - JPMC - Udacity Front End Nanodegree</strong>
+                <br></br>
+                <strong>Udacity Front End Nanodegree - Project 4 Natural Language Processing - Made by JPMC</strong>
             </h2>
         </footer>
 
         <script>
-            // Check that service workers are supported
+            //reference: lesson 4.7
             if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });

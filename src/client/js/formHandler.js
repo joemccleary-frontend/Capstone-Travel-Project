@@ -7,7 +7,7 @@ function handleSubmit(event) {
 
     if(checkURL(formInput)) {
         let post = async (results = {}) => {
-            let apiData = await fetch('/apiPost', {
+            let apiData = await fetch('http://localhost:2020/apiPost', {
                 method: 'POST',
                 credentials: 'same-origin',
                 headers: {'Content-Type': 'application/json'},

@@ -1,5 +1,5 @@
 //import js for webpack
-import { checkURL } from './js/urlChecker'
+//import { checkURL } from './js/urlChecker'
 import { handleSubmit } from './js/formHandler'
 
 //import styles for webpack
@@ -10,6 +10,6 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 export {
-    checkURL,
+    //checkURL,
     handleSubmit
 }

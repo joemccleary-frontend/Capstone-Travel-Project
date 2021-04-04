@@ -22,9 +22,9 @@ app.get('/', function (req, res) {
 console.log(__dirname)
 
 
-//Post
+//Post - GEONAME
 async function apiCall(req, res) {
-    const URL = "https://api.meaningcloud.com/sentiment-2.1?key=" +(process.env.API_KEY)+ "&url=" +(req.body.url)+ "&lang=en"
+    const URL = "http://api.geonames.org/searchJSON?formatted=true&q=" +(req.body.url)+ "&maxRows=1&lang=en&username=jmccleary&style=full"
     const getScore = await fetch(URL)
     
     const score = await getScore.json()
@@ -32,6 +32,19 @@ async function apiCall(req, res) {
     res.send(score)
 }
 app.post('/apiPost', apiCall)
+
+//Post - weatherbit
+/*
+async function weatherapiCall(city, countryName, res) {
+    const weatherURL = "https://api.weatherbit.io/v2.0/current?city=" +(city)+ "&country=" +(countryName)+ "&key=5921086fa74d4d36a38bc3652d4bfca3"
+    const getWeatherScore = await fetch(weatherURL)
+    
+    const weatherScore = await getWeatherScore.json()
+    console.log("Successfully performed api call!")
+    res.send(weatherScore)
+}
+app.post('/apiPost2', weatherapiCall)
+*/
 
 //Port
 app.listen(2020, function () {

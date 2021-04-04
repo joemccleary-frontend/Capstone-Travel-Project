@@ -1,11 +1,12 @@
-import { checkURL } from "./urlChecker"
+//import { checkURL } from "./urlChecker"
 
 function handleSubmit(event) {
     event.preventDefault()
 
     let formInput = document.getElementById('url').value
 
-    if(checkURL(formInput)) {
+    //if(checkURL(formInput)) 
+    
         let post = async (results = {}) => {
             let apiData = await fetch('http://localhost:2020/apiPost', {
                 method: 'POST',
@@ -28,11 +29,12 @@ function handleSubmit(event) {
         
         //update UI
         .then(function(res) {
-            document.getElementById('polarity').innerHTML = "Polarity: "+res.score_tag;
-            document.getElementById("subjectivity").innerHTML = "Subjective/Objective: "+ res.subjectivity;
-            document.getElementById("confidence").innerHTML = "Confidence: "+ res.confidence +"%";
+            console.log(res)
+            document.getElementById('polarity').innerHTML = res.geonames[0].lat;
+            document.getElementById("subjectivity").innerHTML = "Country: "+ res.geonames[0].countryName;
+            document.getElementById("confidence").innerHTML = "City: "+ res.geonames[0].asciiName;
         })
-        }
-    else {alert("Enter a URL that is valid");}
+    //    }
+    //else {alert("Enter a URL that is valid");}
 }
 export { handleSubmit }

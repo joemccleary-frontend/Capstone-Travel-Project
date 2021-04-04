@@ -13,6 +13,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
+    watch: true,
     module: {
         rules: [
             {

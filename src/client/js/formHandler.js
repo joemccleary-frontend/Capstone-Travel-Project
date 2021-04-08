@@ -5,10 +5,12 @@ async function handleSubmit(event) {
     const data = await getWeatherInfo(location);
     const weatherData = data.weatherInfo;
     const picture = data.picture;
-    Client.weatherUpdates(weatherData, location);
+    const country = data.country;
+    Client.weatherUpdates(weatherData, location, country);
     Client.pictureUpdate(picture);
-}
+    console.log("data",data)
 
+}
 async function getWeatherInfo(location) {
     const postData = await fetch("http://localhost:2020/postLocation", {
         method: 'Post',
@@ -24,15 +26,3 @@ async function getWeatherInfo(location) {
 }
 
 export { handleSubmit }
-
-
-
-        /*/update UI
-        .then(function(res) {
-            console.log(res)
-            document.getElementById('polarity').innerHTML = res.geonames[0].lat;
-            document.getElementById("subjectivity").innerHTML = "Country: "+ res.geonames[0].countryName;
-            document.getElementById("confidence").innerHTML = "City: "+ res.geonames[0].asciiName;
-        })*/
-    //    }
-    //else {alert("Enter a URL that is valid");}

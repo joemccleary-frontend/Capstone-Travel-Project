@@ -17,11 +17,14 @@ function weatherUpdates(data, location, country) {
     geolocation.textContent = `Travel Details for ${data.data[0].city_name}, ${country.name}`
     temp.textContent = `Feels like ${data.data[0].app_temp}`
     weatherIcon.textContent = `Update weather icon later https://www.weatherbit.io/static/img/icons/${data.data[0].weather.icon}.png`
-    flag.textContent = `${country.flag}`
+    //flag.textContent = `${country.flag}`
     intro.textContent = `Get ready, you'll be here in X days!`
     currency.textContent = `Make sure to bring your ${country.currencies[0].name}'s`
     timezone.textContent = `Reset your watch ${location}s timezone is TIMEZONE`
     language.textContent = `Brush up on your ${country.languages[0].name}`
+    //flag image
+    const flagimage = document.getElementById('flagimage');
+    flagimage.src = `${country.flag}`;
 }
 
 function pictureUpdate(pictureData) {

@@ -62,9 +62,7 @@ async function getPicture(location) {
 }
 //getting country info from countryREST Api
 async function getCountry(countryCode) {
-//async function getCountry(countryCode) {
     const url = `https://restcountries.eu/rest/v2/alpha/${countryCode}`;
-    //const url = `https://restcountries.eu/rest/v2/alpha/GB`;
     const data = await fetch(url);
     return data.json();
 }

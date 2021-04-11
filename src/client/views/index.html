@@ -8,15 +8,25 @@
     <body>
         <div id="page-container">
         <header>
-            <h1>Evaluate News for Subjectivity and Polarity</h1>
+            <h1>Postcard Yo Future</h1>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input class="user-input" id="url" type="text" name="input" value="" placeholder="Enter URL here to discover sentiment">
-                    <input class="button" type="submit" name="" value="Analyze" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    <div>
+                        <input class="user-input" id="city" type="text" name="input" value="" placeholder="Enter city">
+                    </div>
+                    <div class="date">
+                        <input type="date" id="Departure" required />
+                        <label for="Departure" class="label-name" >
+                            <span class="Date-name">Out</span>
+                        </label>
+                    </div>
+                    <input class="button" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+
                 </form>
+
             </section>
 
             <section class="midsection" id="results">
@@ -30,15 +40,14 @@
                 </div>
                 <div id="travel-info">
                     <!--Updated-->
+                    <h2 id="currentDate">Get ready, you'll be here in X days!</h2>
                     <h2 id="location">City, Country</h2>
                     <h2 id="temp">Currently feels like Temp</h2>
-                    <h2 id="weatherIcon">ICON</h2>
                     <h2 id="weather-description"></h2>
-                    <h2 id="intro">Get ready, you'll be here in X days!</h2>
                     <h2 id="language">Brush up on your Language</h2>
                     <h2 id="currency">Make sure to bring your Currency</h2>
-                    <h2 id="timezone">Reset your watch countrys timezone is</h2>
-                    <!---->
+                    <!--<h2 id="timezone">Reset your watch countrys timezone is</h2>
+                    -->
                     <div id="flag">
                         <img src="https://restcountries.eu/data/chn.svg" id="flagimage">
                     </div>

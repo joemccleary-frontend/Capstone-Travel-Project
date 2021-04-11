@@ -1,7 +1,7 @@
 //import js for webpack
 //import { checkURL } from './js/urlChecker'
 import { handleSubmit } from './js/formHandler'
-import { weatherUpdates, pictureUpdate } from "./js/ui.js"
+import { weatherUpdates, pictureUpdate, updateDate } from "./js/ui.js"
 
 
 //import styles for webpack
@@ -15,5 +15,6 @@ export {
     //checkURL,
     handleSubmit,
     weatherUpdates,
-    pictureUpdate
+    pictureUpdate,
+    updateDate
 }

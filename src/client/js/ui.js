@@ -1,23 +1,17 @@
 // functions to handle ui changes
-function weatherUpdates(data, location, country) {
+function weatherUpdates(data, country) {
     //getting values
     const description = document.getElementById('weather-description');
     const geolocation = document.getElementById('location');
     const temp = document.getElementById('temp')
-    //const weatherIcon = document.getElementById('weatherIcon');
-    //const flag = document.getElementById('flag');
-    const intro = document.getElementById('intro');
     const currency = document.getElementById('currency');
-    //const timezone = document.getElementById('timezone');
     const language = document.getElementById('language');
 
     //populating ui with data
-    
     description.textContent = `Weather:${data.data[0].weather.description}`
     geolocation.textContent = `Travel Details for ${data.data[0].city_name}, ${country.name}`
     temp.textContent = `Feels like ${data.data[0].app_temp}°C`
     currency.textContent = `Make sure to bring your ${country.currencies[0].name}('s)`
-    //timezone.textContent = `Reset your watch ${data.data[0].city_name}'s timezone is TIMEZONE`
     language.textContent = `Brush up on your ${country.languages[0].name}`
     //flag image
     const flagimage = document.getElementById('flagimage');

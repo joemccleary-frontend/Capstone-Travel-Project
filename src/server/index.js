@@ -24,54 +24,50 @@ console.log(__dirname)
 app.listen(2020, function () {
     console.log("Listening on port 2020")
 })
-
-let projectData = {}
-
-app.post('/postLocation', async(req, res) => {
-    const location = req.body.location;
-    const coordinates = await getLatLong(location);
-
-    projectData.longitude = coordinates.geonames[0].lng;
-    projectData.latitude = coordinates.geonames[0].lat;
-    projectData.weatherInfo = await getCurrentWeatherInfo(projectData.latitude, projectData.longitude);
-    projectData.pictureData = await getPicture(location);
-    console.log(coordinates)
-    let CC = coordinates.geonames[0].countryCode;
-    projectData.country = await getCountry(CC);
-    res.send(JSON.stringify({ weatherInfo: projectData.weatherInfo, picture: projectData.pictureData, country: projectData.country}))
-
-});
-console.log(process.env.API_KEY)
-//calling geoname
-async function getLatLong(location) {
-    const url = `http://api.geonames.org/searchJSON?formatted=true&q=${location}&maxRows=10&lang=es&username=jmccleary&style=full`;
-    const data = await fetch(url);
-    return data.json();
-}
-// calling weatherbit to get curent weatherInfo
-async function getCurrentWeatherInfo(lat, long) {
-    const url = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${long}&key=5921086fa74d4d36a38bc3652d4bfca3`
-    const data = await fetch(url);
-    return data.json();
-}
-//getting picture from pixabay
-async function getPicture(location) {
-    const url = `https://pixabay.com/api/?key=20873600-37a38bfa9e5523a50f7de6b3f&q=${location}&image_type=photo&pretty=true`
-    const data = await fetch(url);
-    return data.json();
-}
-//getting country info from countryREST Api
-async function getCountry(countryCode) {
-    const url = `https://restcountries.eu/rest/v2/alpha/${countryCode}`;
-    const data = await fetch(url);
-    return data.json();
-}
-
-
-app.get("/servertest", function(req, res) {
-    res.json({
-        status: 200,
-    });
-});
-
 module.exports = app;
+
+let Data = {}
+
+app.post('/post', async(req, res) => {
+    const city = req.body.location;
+    const coordinates = await getCoords(city);
+    
+
+    Data.lat = coordinates.geonames[0].lat;
+    Data.long = coordinates.geonames[0].lng;
+    Data.weatherInfo = await getWeather(Data.long, Data.lat);
+    Data.pictureData = await getPicture(city);
+    
+    let cc = coordinates.geonames[0].countryCode;
+    Data.country = await getCountry(cc);
+    res.send(JSON.stringify({ 
+        weatherInfo: Data.weatherInfo, 
+        picture: Data.pictureData, 
+        country: Data.country
+    }))
+});
+//get keys
+const geonameKey = process.env.geonames;
+const weatherbitKey = process.env.weatherbit;
+const pixabayKey = process.env.pixabay;
+//api calls
+async function getCoords(location) {
+    const geo = await fetch(`http://api.geonames.org/searchJSON?formatted=true&q=${location}&maxRows=5&lang=en&username=${geonameKey}`);
+    return geo.json();
+}
+
+async function getWeather(long, lat) {
+    const weather = await fetch(`https://api.weatherbit.io/v2.0/current?lon=${long}&lat=${lat}&key=${weatherbitKey}`);
+    return weather.json();
+}
+
+async function getPicture(location) {
+    const image = await fetch(`https://pixabay.com/api/?key=${pixabayKey}&q=${location}&image_type=photo`);
+    return image.json();
+}
+
+async function getCountry(countryCode) {
+    const country = await fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
+    return country.json();
+}
+

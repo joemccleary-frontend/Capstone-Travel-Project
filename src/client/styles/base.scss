@@ -1,30 +1,198 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 main {
     align-items: center;
 }
-
-section {
-    max-width: 800px;
-    margin: 50px auto;
+.landing {
+    display: flex;
+    flex-direction: column;
+    background-color: #121640;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.logo{
+    padding-bottom: 100px;
 }
 
-#page-container{
-    background-color: rgb(216, 119, 22);
+button.start {
+    margin-top: 30px;
+    padding: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    background-color: #01adb3;
+    border-color: #121640;
+    color: #121640;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
 }
-.midsection {
-    width: auto;  
-    text-align: center;  
-    padding: 15px;  
-    border: 3px solid red;  
+
+
+button.start:hover{
+    background-color: #00C4CC;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+#inputPage{
+    height: 100vh;
+    background-image: linear-gradient(180deg, rgb(18,22,64), #01adb3);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+
+.invisible {
+    display: none !important;
+}
+
+.to {
+    width: 30%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    margin-left: 41.5%;
+}
+.to input{
+    width: 100%;
+    height: 100%;
+    color: #a13b99;
+    background-color: transparent;
+    padding-top: 20px;
+    border: none;
+    border-bottom: black 1px solid;
+    outline: none;
+}
+
+.to label{
+    position: absolute;
+    bottom: -5px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.to label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    
+    border-bottom: 3px solid #5fa8d3;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.to input:focus + .label-name .content-name, 
+.to input:valid + .label-name .content-name
+{
+    transform: translateY(-200%);
+    font-size: 14px;
+    color: #01adb3;
+
+}
+
+.to input:focus +.label-name::after, 
+.to input:valid, .label-name::after{
+    transform: translateX(0%);
+}
+
+#Departure {
+    outline: none;
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+    font-size: 1em;
+    border: none;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding-left: 15px;
+    margin-top: 80px;
+}
+#quote {
+    margin-top: 100px;
+    color: #121640;
+    padding: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+#create{
+    margin-top: 30px;
+    padding: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border: none;
+    border-radius: 30px;
+    background-color: #121640;
+    color: #01adb3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+#create:hover{
+    background-color: #202668;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.Date-name{
+    left: -210px;
+    position: relative;
+    bottom: 40px;
+}
+.invisible2 {
+    display: none !important;
+}
+#results {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(180deg, #01adb3, #9e709b);
+    font-family: 'Architects Daughter', cursive;
 }
 img#image, img#flagimage {
-    width: 600px;
+    width: 300px;
 }
-
+#reset{
+    padding: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border: none;
+    border-radius: 30px;
+    background-color: #121640;
+    color: #01adb3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    cursor: pointer;
+}

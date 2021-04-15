@@ -1,5 +1,5 @@
 //import js for webpack
-import { handleSubmit, updateUI } from './js/formHandler'
+import { handleSubmit, updateUI, createInput, createResults, reset } from './js/formHandler'
 
 //import styles for webpack
 import './styles/resets.scss'
@@ -11,4 +11,7 @@ import './styles/header.scss'
 export {
     handleSubmit,
     updateUI,
+    createInput,
+    createResults,
+    reset
 }

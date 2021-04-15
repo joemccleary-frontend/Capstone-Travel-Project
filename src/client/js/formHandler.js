@@ -1,8 +1,10 @@
 async function handleSubmit(event) {
     event.preventDefault()
-    const data = await fetchWeather(document.getElementById('city').value);
+    const data = await fetchWeather(document.getElementById('to').value);
     updateUI(data.weatherInfo, data.country, data.image);
-    console.log("data:",data)
+    console.log("data:",data);
+    document.getElementById("results").classList.remove("invisible2");
+    results.scrollIntoView({behavior: "smooth"});
 }
 async function fetchWeather(city) {
     const post = await fetch('http://localhost:2020/post', {
@@ -64,7 +66,19 @@ function updateUI(weather, country, imageData) {
     
 }
 
+function createInput() {
+    document.getElementById("inputPage").classList.remove("invisible");
+    inputPage.scrollIntoView({behavior: "smooth"});
+
+}
+
+function reset() {
+    document.getElementById("results").classList.add("invisible2");
+}
+
 export {
     handleSubmit,
     updateUI,
+    createInput,
+    reset
 }

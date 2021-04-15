@@ -2,20 +2,29 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>News Sentiment Analysis</title>
+        <title>Postcard Your Future</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div id="page-container">
-        <header>
-            <h1>Postcard Yo Future</h1>
-        </header>
-
         <main>
-            <section>
+            <section class="landing">
+                <div class="button">
+                    <button class="start" onclick=Client.createInput()>Start</button>
+                </div>
+            </section>
+
+            <section class="invisible" id="inputPage">
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <div>
-                        <input class="user-input" id="city" type="text" name="input" value="" placeholder="Enter city">
+                    <div class="to">
+                        <input type="text" name="to" autocomplete="off" id="to" required />
+                        <label for="to" class="label-name" >
+                            <span class="content-name">To</span>
+                        </label>
                     </div>
                     <div class="date">
                         <input type="date" id="Departure" required />
@@ -23,20 +32,23 @@
                             <span class="Date-name">Out</span>
                         </label>
                     </div>
-                    <input class="button" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-
-                </form>
-
+                    <div>
+                        <div id="quote">
+                            <p><em>"To see the world, things dangerous to come, to see behind walls, draw closer, 
+                            to find each other, and to feel. That is the purpose of life."</em></p>
+                        </div>
+                    <input id="create" class="button" type="submit" name="" value="Create" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                    </div> 
+                </form>                
             </section>
-
-            <section class="midsection" id="results">
+            <section class="invisible2" id="results">
                 <em>Postcard:</em>
 
                 <div class="photo">
-                    <img src="https://picsum.photos/seed/picsum/300/300" alt="pixabay image" id="image">
+                    <img src="" alt="location image" id="image">
                 </div>
                 <div class="weatherIcon">
-                    <img src="https://picsum.photos/seed/picsum/300/300" alt="weather" id="weather">
+                    <img src="" alt="weather" id="weather">
                 </div>
                 <div id="travel-info">
                     <!--Updated-->
@@ -46,10 +58,11 @@
                     <h2 id="weather-description"></h2>
                     <h2 id="language">Brush up on your Language</h2>
                     <h2 id="currency">Make sure to bring your Currency</h2>
-                    <!--<h2 id="timezone">Reset your watch countrys timezone is</h2>
-                    -->
                     <div id="flag">
-                        <img src="https://restcountries.eu/data/chn.svg" id="flagimage">
+                        <img src="" id="flagimage">
+                    </div>
+                    </div class="button">
+                        <button id="reset" onclick=Client.reset()>Reset</button>
                     </div>
                 </div>
                 

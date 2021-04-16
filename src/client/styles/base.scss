@@ -59,6 +59,7 @@ button.start:hover{
 }
 
 .to {
+    margin-top: 100px;
     width: 30%;
     position: relative;
     height: 50px;
@@ -122,6 +123,7 @@ button.start:hover{
 }
 
 #Departure {
+    //margin-top: 300px;
     outline: none;
     width: 200px;
     height: 40px;
@@ -134,14 +136,14 @@ button.start:hover{
     margin-top: 80px;
 }
 #quote {
-    margin-top: 100px;
+    margin-top: 170px;
     color: #121640;
     padding: 20px;
     font-size: 1.1rem;
     text-align: center;
 }
 #create{
-    margin-top: 30px;
+    margin-top: 130px;
     padding: 15px;
     padding-left: 45px;
     padding-right: 45px;
@@ -165,6 +167,9 @@ button.start:hover{
     position: relative;
     bottom: 40px;
 }
+.Date-name:valid{
+    color:#01adb3;
+}
 .invisible2 {
     display: none !important;
 }
@@ -179,8 +184,75 @@ button.start:hover{
     font-family: 'Architects Daughter', cursive;
 }
 img#image, img#flagimage {
-    width: 300px;
+    width: 80px;
 }
+#postcardBack {
+    width: 580px !important;
+}
+#Postcardimage {
+    width: 580px !important;
+    margin-bottom: 50px;
+    border: #e2d5c7 10px solid;
+}
+#locationCard {
+    position: relative;
+    bottom: 100px;
+    left: 16px;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px black;
+	-webkit-text-fill-color: white;
+}
+
+#weather {
+    position: relative;
+    bottom: 280px;
+    left: 70px;
+}
+
+#currentDate{
+    position: relative;
+    bottom: 280px;
+    left: 70px;
+}
+
+#location{
+    position: relative;
+    bottom: 280px;
+    left: 70px;
+}
+
+#temp {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+}
+
+#weather-description {
+    position: relative;
+    bottom: 280px;
+    left: 40px;
+}
+
+#language {
+    position: relative;
+    bottom: 280px;
+    left: 70px;
+}
+#currency {
+    position: relative;
+    bottom: 280px;
+    left: 70px;
+}
+
+#flag{
+    position: relative;
+    bottom: 530px;
+    left: 300px;
+    width: 30px;
+}
+
+
+
 #reset{
     padding: 15px;
     padding-left: 45px;
@@ -195,4 +267,9 @@ img#image, img#flagimage {
     font-family: 'Open Sans', sans-serif;
     outline: none;
     cursor: pointer;
+}
+#reset:hover{
+    background-color: #202668;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }

@@ -19,10 +19,12 @@ async function fetchWeather(city) {
 }
 //Update UI
 function updateUI(weather, country, imageData) {
+    //location on card
+    const locationCard = document.getElementById('locationCard');
+    locationCard.textContent = `${weather.data[0].city_name}`
     //weathericon image
     const weathericon = document.getElementById('weather');
-    weathericon.src = `./src/client/media/icons/${weather.data[0].weather.icon}.png`
-
+    weathericon.src = `../assets/images/${weather.data[0].weather.icon}.png`
     //weather
     const description = document.getElementById('weather-description');
     description.textContent = `Weather:${weather.data[0].weather.description}`
@@ -48,7 +50,7 @@ function updateUI(weather, country, imageData) {
     flagimage.src = `${country.flag}`;
     
     //updateImage
-    const image = document.getElementById('image');
+    const image = document.getElementById('Postcardimage');
     image.src = imageData.hits[0].largeImageURL;
     
     //updateDate

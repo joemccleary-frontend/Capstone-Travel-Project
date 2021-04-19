@@ -22,12 +22,14 @@ function updateUI(weather, country, imageData) {
     //location on card
     const locationCard = document.getElementById('locationCard');
     locationCard.textContent = `${weather.data[0].city_name}`
+
     //weathericon image
     const weathericon = document.getElementById('weather');
     weathericon.src = `../assets/images/${weather.data[0].weather.icon}.png`
+
     //weather
     const description = document.getElementById('weather-description');
-    description.textContent = `Weather:${weather.data[0].weather.description}`
+    description.textContent = `${weather.data[0].weather.description}`
     
     //location
     const geolocation = document.getElementById('location');
@@ -43,12 +45,12 @@ function updateUI(weather, country, imageData) {
     
     //currency
     const currency = document.getElementById('currency');
-    currency.textContent = `Make sure to bring your ${country.currencies[0].name}('s)`
+    currency.textContent = `Bring your ${country.currencies[0].name}('s)`
     
     //flag image
     const flagimage = document.getElementById('flagimage');
     flagimage.src = `${country.flag}`;
-    
+
     //updateImage
     const image = document.getElementById('Postcardimage');
     image.src = imageData.hits[0].largeImageURL;

@@ -5,34 +5,19 @@ The feature added to make my project stand out was the use of the REST Countries
 
 ## How to run the project
 
-1. Sign up for an API key at [geonames.org](https://www.geonames.org/), [weatherbit.io](https://www.weatherbit.io/account/create), [pixabay.com](https://pixabay.com/)
+1. Download the project
 
-2. Install the dotenv package using
+2. Install the packages using
 	```
-	npm install dotenv
-	```
-
-3. Create a `.env` file in project root
-
-4. Add the API keys to `.env` file:
-	```
-	geonames API:
-	geonames=jmccleary
-
-	weatherbit API:
-	weatherbit=5921086fa74d4d36a38bc3652d4bfca3
-
-	Pixabay API:
-	pixabay=20873600-37a38bfa9e5523a50f7de6b3f
-
+	npm install
 	```
 
-5. Build the project using
+3. Build the project using
 	`npm run build-prod` 
 
-6. Run the project	using
-	`npm start` 
+4. Run the project	using
+	`npm run start` 
 	
-7. Open browser at http://localhost:2020/
+5. Open browser at http://localhost:2020/
 
-8. Enter the desintation and departure date!
+6. Enter the desintation and departure date!

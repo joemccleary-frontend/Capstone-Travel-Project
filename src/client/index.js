@@ -9,10 +9,6 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 //images
-//import aaa from './media/icons/c02n.png'
-//import AAA from './media/images/Postcardyourfuture.png'
-//const logo = document.getElementById('logo')
-//logo.setAttribute('src', AAA)
 import './media/images/Postcardyourfuture.png'
 import './media/images/postcard-back.jpg'
 import './media/icons/a01d.png'
@@ -79,11 +75,6 @@ import './media/icons/t05d.png'
 import './media/icons/t05n.png'
 import './media/icons/u00d.png'
 import './media/icons/u00n.png'
-
-
-
-
-
 
 export {
     handleSubmit,

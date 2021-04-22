@@ -17,13 +17,13 @@ The feature added to make my project stand out was the use of the REST Countries
 4. Add the API keys to `.env` file:
 	```
 	geonames API:
-	geonames=**********
+	geonames=jmccleary
 
 	weatherbit API:
-	weatherbit=***********************************
+	weatherbit=5921086fa74d4d36a38bc3652d4bfca3
 
 	Pixabay API:
-	pixabay=***********************************
+	pixabay=20873600-37a38bfa9e5523a50f7de6b3f
 
 	```
 

@@ -6,6 +6,7 @@ const fetch = require('node-fetch');
 
 const app = express()
 app.use(express.static('dist'))
+require("babel-polyfill");
 
 // Install cors
 const cors = require('cors');
@@ -20,11 +21,12 @@ app.get('/', function (res) {
     res.sendFile('dist/index.html')
 })
 console.log(__dirname)
+
 //Port
 app.listen(2020, function () {
     console.log("Listening on port 2020")
 })
-module.exports = app;
+
 //get keys
 const geonameKey = process.env.geonames;
 const weatherbitKey = process.env.weatherbit;
@@ -57,3 +59,10 @@ app.post('/post', async(req, res) => {
         image: imageData,
     }))
 });
+
+app.get("/test", function(req, res) {
+    res.json({
+        status: 200,
+    });
+});
+module.exports = app;

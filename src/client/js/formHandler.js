@@ -50,6 +50,7 @@ export function updateUI(weather, country, imageData) {
 
     //updateImage
     document.querySelector('#Postcardimage').src = imageData.hits[0].largeImageURL;
+
     
     //updateDate
     const currentDate = document.getElementById('currentDate')

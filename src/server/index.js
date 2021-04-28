@@ -20,13 +20,13 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.get('/', function (res) {
     res.sendFile('dist/index.html')
 })
-console.log(__dirname)
+//console.log(__dirname)
 
-//Port
-app.listen(2020, function () {
-    console.log("Listening on port 2020")
-})
-
+app.get("/test", function(req, res) {
+    res.json({
+        status: 200,
+    });
+});
 //get keys
 const geonameKey = process.env.geonames;
 const weatherbitKey = process.env.weatherbit;
@@ -58,11 +58,5 @@ app.post('/post', async(req, res) => {
         country: country,
         image: imageData,
     }))
-});
-
-app.get("/test", function(req, res) {
-    res.json({
-        status: 200,
-    });
 });
 module.exports = app;

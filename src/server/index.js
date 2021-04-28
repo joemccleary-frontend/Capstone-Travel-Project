@@ -20,7 +20,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.get('/', function (res) {
     res.sendFile('dist/index.html')
 })
-//console.log(__dirname)
 
 app.get("/test", function(req, res) {
     res.json({

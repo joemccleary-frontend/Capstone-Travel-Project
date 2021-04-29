@@ -31,7 +31,7 @@ const geonameKey = process.env.geonames;
 const weatherbitKey = process.env.weatherbit;
 const pixabayKey = process.env.pixabay;
 //Post data
-app.post('/post', async(req, res) => {
+app.post('https://postcardyourfuture.netlify.app/post', async(req, res) => {
     const coords = await getCoords(req.body.city);
     async function getCoords(location) {
         const geo = await fetch(`http://api.geonames.org/searchJSON?formatted=true&q=${location}&maxRows=5&lang=en&username=${geonameKey}`);

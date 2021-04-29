@@ -1,6 +1,7 @@
 # Capstone - Travel Planning Project
 
 This project is the final part of the Udacity Front End nanodegree, the goal of it is to create an app that uses Geonames, Pixabay, Weatherbit APIs. Upon entering a destination and travel date it wll return the following pieces of information in the format of a postcard:
+
 -Image of destination
 -Current Weather
 -Currency

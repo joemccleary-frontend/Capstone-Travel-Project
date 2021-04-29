@@ -7,7 +7,7 @@ export async function handleSubmit(event) {
     event.preventDefault()
     const data = await fetchWeather(document.querySelector('#to').value);
     async function fetchWeather(city) {
-        const post = await fetch('/post', {
+        const post = await fetch('https://postcardyourfuture.netlify.app/post', {
             method: 'Post',
             credentials: 'same-origin',
             headers: {
